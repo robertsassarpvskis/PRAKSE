@@ -1,0 +1,138 @@
+/* Pielāgojumi uzdevumu pārvaldnieka izskatam */
+
+body {
+  font-family: 'Roboto', sans-serif; /* Mainīgais fonta stils */
+}
+
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff; /* Balts fons */
+  border-radius: 10px; /* Noapaļoti stūri */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Vieglas ēnas */
+}
+
+h1 {
+  color: #333; /* Virsraksta krāsa */
+  font-weight: 300;
+}
+
+.input-field input[type="text"] {
+  width: calc(100% - 48px); /* Izskats ievades laukam */
+}
+
+.btn {
+  background-color: #007bff; /* Pogas fona krāsa */
+  color: #fff; /* Pogas teksta krāsa */
+  border-radius: 25px; /* Noapaļoti pogas stūri */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Pogas fona krāsa uz pārlaidi */
+}
+
+.collection-item {
+  border: none; /* Noņemam apmales no uzdevumu vienībām */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 10px; /* Atstarpe starp uzdevumiem */
+  background-color: #f9f9f9; /* Vieglas pelēkas uzdevumu bloki */
+  border-radius: 10px; /* Noapaļoti stūri */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Vieglas ēnas */
+}
+
+.collection-item .task-content {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.completed {
+  text-decoration: line-through; /* Uzstāda svītras pāri pabeigtajiem uzdevumiem */
+}
+
+.collection-header {
+  font-weight: bold; /* Palielina uzdevumu saraksta virsrakstu teksta biezumu */
+  background-color: transparent; /* Caurspīdīgs fons */
+  padding-left: 0;
+}
+
+button {
+  margin-left: 10px;
+}
+
+.right {
+  float: right; /* Novietojam pogas labajā pusē */
+}
+
+.mr-2 {
+  margin-right: 10px; /* Pogas atstarpe */
+}
+
+button i {
+  margin-right: 5px; /* Ikonas atstarpe */
+}
+
+.button-container {
+  display: flex;
+}
+
+/* Tumšais režīms */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .container {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .collection-item {
+  background-color: #333333;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .btn {
+  background-color: #007bff;
+}
+
+body.dark-mode .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Virsraksta stils tumšajā režīmā */
+body.dark-mode h1 {
+  color: #ffffff; /* Virsraksta krāsa tumšajā režīmā */
+}
+
+/* Media Queries, lai padarītu mājaslapu responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 992px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 993px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}

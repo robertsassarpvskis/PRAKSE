@@ -32,22 +32,28 @@
             border: 1px solid rgb(232, 233, 233);
             transition: background-color 0.2s ease-in-out;
         }
-
-        .elements:hover {
+        .elements-vertical{
+            border-radius: 10px;
+            background-color: rgb(248, 250, 250);
+            border: 1px solid rgb(232, 233, 233);
+            transition: background-color 0.2s ease-in-out;
+            height: 300px;
+        }
+        .elements:hover{
             background-color: rgb(238, 240, 240);
             transform: scale(1.05);
         }
 
         .bg-pattern {
             border-radius: 10px;
-            background: url("../my-poetry-portfolio/images/pattern.jpg");
-            background-size: cover; /* Ensures the background covers the entire element */
-            background-position: center; /* Centers the background image */
+            background: url("images/pattern.jpg");
+            background-size: cover; 
+            background-position: center; 
         }
         .bg-pattern-1{
-            background: url("../my-poetry-portfolio/images/pattern-1.jpg");
-            background-size: cover; /* Ensures the background covers the entire element */
-            background-position: center; /* Centers the background image */
+            background: url("images/pattern-1.jpg");
+            background-size: cover; 
+            background-position: center; 
         }
 
         footer {
@@ -71,6 +77,7 @@
     <main>
         <div class="row gap-2 info">
             <div class="col-12 bg-pattern-1">
+                Latvija
                 <img src="x" alt="x">
             </div>
             <div class="col-6 m-3 p-4 elements text-center">
@@ -104,8 +111,8 @@
                 </figure>
             </div>
             <div class="col-5 m-3">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-12 p-3 mb-3 elements">
+                <div class="row d-flex ">
+                    <div class="col-12 p-3 mb-3 elements justify-content-center">
                         <p class="text-dark text-uppercase fs-4 fw-bold">Roberts Assarovskis</p>
                         <hr>
                         <p class="text-dark fw-lighter">e-pasts: <span class="fw-bold ps-2"><a target="_blank" href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&emr=1&ifkv=AS5LTAQlhtN7DAgU2O6cgcKoW0t1LOJrk__iyhwVygNA5Pj52GHRe8MG24t-3oFI9Ji7MRWr81OpAA&ltmpl=default&ltmplcache=2&osid=1&passive=true&rm=false&scc=1&service=mail&ss=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-1290964015%3A1718187347408572&ddm=0"> assarovskisr@gmail.com</a></span></p>
@@ -114,48 +121,86 @@
                         <hr>
                         <div class="row text-center">
                             <div class="col">
-                                <a href="#"><img class="sc-icons" src="../my-poetry-portfolio/icons/instagram.png" alt="INSTAGRAM"></a>
+                                <a href="#"><img class="sc-icons" src="icons/instagram.png" alt="INSTAGRAM"></a>
                             </div>
                             <div class="col">
-                                <a href="https://www.facebook.com/public/Roberts-Assarovskis/" target="_blank"><img class="sc-icons" src="../my-poetry-portfolio/icons/facebook.png" alt="facebook"></a>
+                                <a href="https://www.facebook.com/public/Roberts-Assarovskis/" target="_blank"><img class="sc-icons" src="icons/facebook.png" alt="facebook"></a>
                             </div>
                             <div class="col">
-                                <a href="#"><img class="sc-icons" src="../my-poetry-portfolio/icons/twitter.png" alt="twitter"></a>
+                                <a href="#"><img class="sc-icons" src="icons/twitter.png" alt="twitter"></a>
                             </div>
                         </div>
                     </div>
                     <style>
                         .swiper {
-                            height: 300px;
+                            height: 185px;
                         }
                         .bg-image {
-                            background-size: cover; /* Makes sure the image covers the entire slide */
-                            background-position: center; /* Centers the image */
-                            height: 100%; /* Ensures the slide takes up the full height of the container */
+                            background-size: cover; 
+                            background-position: center; 
+                            height: 100%; 
                             width: 100%;
-                            border-radius: 10px; /* Ensures the slide takes up the full width of the container */
+                            border-radius: 10px; 
+                        }
+                        .ev-hobby{
+                            background-color: rgb(248, 250, 250);
+                            transition: .2s ease-out;
+                        }
+                        .ev-hobby:hover{
+
                         }
 
                     </style>
-                    <div class="col-12 px-0 elements">
-                        <div class="swiper">
-                            <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper">
-                                <!-- Slides -->
-                                <div class="swiper-slide">
-                                    <img class="bg-image" src="images/keef1.jpg" alt="Chief Keef">
+                    <div class="row justify-content-between">
+                        <div class="col-6 px-0">
+                            <div class="swiper elements">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <img class="bg-image" src="images/keef1.jpg" alt="Chief Keef">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img class="bg-image" src="images/OIP.jfif" alt="Chief Keef">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img class="bg-image" src="images/keef2.jpg" alt="Chief Keef">
+                                    </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <img class="bg-image" src="images/OIP.jfif" alt="Chief Keef">
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="elements p-3  mt-2"> Latvija</div>
+                        </div>
+                       
+                        <div class="col-5 p-3 elements-vertical text-center">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p class="text-dark text-uppercase fs-5 fw-bold">Hobiji</p>
+                                    <hr>
                                 </div>
-                                <div class="swiper-slide">
-                                    <img class="bg-image" src="images/keef2.jpg" alt="Chief Keef">
+                                <div class="col-12 ev-hobby">
+                                    <p class="text-dark fw-lighter text-uppercase fs-6 ">Hobiji</p>
+                                    <hr>
+                                </div>
+                                <div class="col-12">
+                                    <p class="text-dark fw-lighter text-uppercase fs-6 ">Hobiji</p>
+                                    <hr>
+                                </div>
+                                <div class="col-12">
+                                    <p class="text-dark fw-lighter text-uppercase">Hobiji</p>
+                                    <hr>
+                                </div>
+                                <div class="col-12">
+                                    <p class="text-dark fw-lighter text-uppercase fs-6 ">Hobiji</p>
+                                    <hr>
                                 </div>
                             </div>
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
+                            
+
 
                         </div>
+
                     </div>
                 </div>
             </div>
