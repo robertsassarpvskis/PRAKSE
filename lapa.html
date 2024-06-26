@@ -3,9 +3,660 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latvija</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <title>Chicago Bulls</title>
 </head>
 <body>
-    <style></style>
+    <style>
+        body {
+            font-family: var(--font-Mots);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1336px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .page{
+            background-color: #0A0A0C;
+        }
+        .bg-pattern-bulls {
+            background: 
+                linear-gradient(to top, rgba(0, 0, 0, 0.975) 25%, transparent 70%), /* Bottom gradient */
+                linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent 50%, transparent 50%, rgba(0, 0, 0, 0.8)),
+                url("images/jordan.jpg");
+            background-size: cover; 
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Stack items vertically */
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center; /* Center text alignment */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .page-top{
+            height: 960px;
+        }
+        button,button::after {
+            padding: 16px 20px;
+            font-size: 18px;
+            background: linear-gradient(45deg, transparent 5%, #880020 5%);
+            border: 0;
+            color: #fff;
+            letter-spacing: 3px;
+            line-height: 1;
+            box-shadow: 6px 0px 0px #4e0101;
+            outline: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+
+        button::after {
+            --slice-0: inset(50% 50% 50% 50%);
+            --slice-1: inset(80% -6px 0 0);
+            --slice-2: inset(50% -6px 30% 0);
+            --slice-3: inset(10% -6px 85% 0);
+            --slice-4: inset(40% -6px 43% 0);
+            --slice-5: inset(80% -6px 5% 0);
+            content: "HOVER ME";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 3%, #4e0101 3%, #4e0101 5%, #880020 5%);
+            text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #4e0101;
+            clip-path: var(--slice-0);
+        }
+
+        button:hover::after {
+            animation: 1s glitch;
+            animation-timing-function: steps(2, end);
+        }
+
+        @keyframes glitch {
+            0% {
+                clip-path: var(--slice-1);
+                transform: translate(-20px, -10px);
+            }
+
+            10% {
+                clip-path: var(--slice-3);
+                transform: translate(10px, 10px);
+            }
+
+            20% {
+                clip-path: var(--slice-1);
+                transform: translate(-10px, 10px);
+            }
+
+            30% {
+                clip-path: var(--slice-3);
+                transform: translate(0px, 5px);
+            }
+
+            40% {
+                clip-path: var(--slice-2);
+                transform: translate(-5px, 0px);
+            }
+
+            50% {
+                clip-path: var(--slice-3);
+                transform: translate(5px, 0px);
+            }
+
+            60% {
+                clip-path: var(--slice-4);
+                transform: translate(5px, 10px);
+            }
+
+            70% {
+                clip-path: var(--slice-2);
+                transform: translate(-10px, 10px);
+            }
+
+            80% {
+                clip-path: var(--slice-5);
+                transform: translate(20px, -10px);
+            }
+
+            90% {
+                clip-path: var(--slice-1);
+                transform: translate(-10px, 0px);
+            }
+
+            100% {
+                clip-path: var(--slice-1);
+                transform: translate(0);
+            }
+        }
+    </style>
+    <div class="page">
+        <div class="page-top bg-pattern-bulls text-center">
+            <div class="container row justify-content-center">
+                <div class="col-12 my-3">
+                    <h2 class="text-danger text-uppercase display-3 fw-bold">chicago bulls</h2>
+                </div>
+                <div class="col-6 my-5 text-center">
+                    <p class="fs-6 text-danger fw-bold">The Chicago Bulls are a professional basketball team based in Chicago, Illinois. They are known for their legendary era in the 1990s, led by Michael Jordan, which brought them six NBA championships.</p>
+                </div>
+                <div class="col-8">
+                    <button class="text-uppercase" onclick="redirectToPage()">Chicago main web</button>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .heading{
+                border-left: #e60000 5px solid;
+                margin: 0;
+            }
+            .swiper{
+                height: 550px;
+                border: 1px solid #e60000;
+
+            }
+
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+            .border-cust{
+                border-right: 1px solid #e60000;
+            }
+            .ps-7{
+                padding-left: 70px;
+            }
+            .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+                bottom: var(--swiper-pagination-bottom, -740px);
+                left: 0;
+                width: 100%;
+            }
+            .swiper-pagination-bullet {
+                width: 45px;
+                height: 5px;
+                display: inline-block;
+                border-radius: 0px;
+                background: #616060;
+                opacity: var(--swiper-pagination-bullet-inactive-opacity, .2);
+            }
+            .swiper-pagination-bullet-active {
+    opacity: var(--swiper-pagination-bullet-opacity, 1);
+    background: #e60000;
+}
+        </style>
+
+        <div class="page-content py-5">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12 heading mb-5">
+                        <h1 class="ps-7 text-uppercase fw-bold display-5" style="margin: 0;">Roster</h1>
+                    </div>
+                    <div class="col-12 p-0">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide"> <!--Jordan-->
+                                <div class="row players d-flex">
+                                    <div class="col-6 d-flex justify-content-center">
+                                        <img src="images/jordan-sw.jpg" class="swiper-slide-images" alt="x">
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-center info">
+                                        <div class="row gap-1">
+                                            <div class="col-6 p-4 pe-0 border-cust">
+                                                <h2 class="text-uppercase fw-bold pb-4" style="color: #e60000;">Michael Jordan<hr></h2>
+                                                <p class="text-uppercase text-white-75">Position: SG (Shooting Guard)<hr></p>
+                                                <p class="text-uppercase fw-bold">Height:<span class="text-white-75"> 6'6"<hr></span></p>
+                                                <p class="text-uppercase fw-bold">Weight:<span class="text-white-75"> 216 lbs<hr></span></p>
+                                                <p class="text-uppercase fw-bold">College:<span class="text-white-75"> University of North Carolina<hr></span></p>
+                                                <p class="text-uppercase fw-bold">NBA Career:<span class="text-white-75"> 1984 - 1993, 1995 - 1998, 2001 - 2003<hr></span></p>
+                                                <p class="text-uppercase fw-bold">NBA Championships:<span class="text-white-75"> (1991, 1992, 1993, 1996, 1997, 1998)</span></p>
+                                            </div>
+                                            
+                                            <div class="col p-2 d-flex justify-content-center align-items-center" style="align-items: flex-start">
+                                                <figure class="text-center">
+                                                    <blockquote class="blockquote">
+                                                      <p class="text-white-50 pb-1">I've missed more than 9,000 shots in my career. I've lost almost 300 games. 26 times, I've been trusted to take the game-winning shot and missed. I've failed over and over and over again in my life. And that is why I succeed.</p>
+                                                    </blockquote>
+                                                    <figcaption class="blockquote-footer">
+                                                     <cite title="Source Title" class="text-white">Michael Jordan</cite>
+                                                    </figcaption>
+                                                  </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="swiper-slide"><!--Scotttie-->
+                                <div class="row players d-flex">
+                                    <div class="col-6 d-flex justify-content-center">
+                                        <img src="images/pippens-swiper.jpg" class="swiper-slide-images" alt="Scottie Pippen">
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-center info">
+                                        <div class="row gap-1">
+                                            <div class="col-6 p-4 pe-0 border-cust">
+                                                <h2 class="text-uppercase fw-bold pb-4" style="color: #e60000;">Scottie Pippen<hr></h2>
+                                                <p class="text-uppercase text-white-75">Position: SF (Small Forward)<hr></p>
+                                                <p class="text-uppercase fw-bold">Height:<span class="text-white-75"> 6'8"<hr></span></p>
+                                                <p class="text-uppercase fw-bold">Weight:<span class="text-white-75"> 210 lbs<hr></span></p>
+                                                <p class="text-uppercase fw-bold">College:<span class="text-white-75"> University of Central Arkansas<hr></span></p>
+                                                <p class="text-uppercase fw-bold">NBA Career:<span class="text-white-75"> 1987 - 2004<hr></span></p>
+                                                <p class="text-uppercase fw-bold">Chicago Bulls Tenure:<span class="text-white-75"> 1987 - 1998<hr></span></p>
+                                                <p class="text-uppercase fw-bold">NBA Championships:<span class="text-white-75"> (1991, 1992, 1993, 1996, 1997, 1998)</span></p>
+                                            </div>
+                                            <div class="col p-2 d-flex justify-content-center align-items-center" style="align-items: flex-start">
+                                                <figure class="text-center">
+                                                    <blockquote class="blockquote">
+                                                        <p class="text-white-50 pb-1">I've never been one to say that I deserve this, or that I deserve that. I just go out and play, and I think everything takes care of itself.</p>
+                                                    </blockquote>
+                                                    <figcaption class="blockquote-footer">
+                                                        <cite title="Source Title" class="text-white">Scottie Pippen</cite>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="swiper-slide"><!--Steve Kerr-->
+                                <div class="row players d-flex">
+                                    <div class="col-6 d-flex justify-content-center">
+                                        <img src="images/steve_kerr.jpg" class="swiper-slide-images" alt="Steve Kerr">
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-center info">
+                                        <div class="row gap-1">
+                                            <div class="col-6 p-4 pe-0 border-cust">
+                                                <h2 class="text-uppercase fw-bold pb-4" style="color: #e60000;">Steve Kerr<hr></h2>
+                                                <p class="text-uppercase text-white-75">Position: PG (Point Guard)<hr></p>
+                                                <p class="text-uppercase fw-bold">Height:<span class="text-white-75"> 6'3"<hr></span></p>
+                                                <p class="text-uppercase fw-bold">Weight:<span class="text-white-75"> 175 lbs<hr></span></p>
+                                                <p class="text-uppercase fw-bold">College:<span class="text-white-75"> University of Arizona<hr></span></p>
+                                                <p class="text-uppercase fw-bold">NBA Career:<span class="text-white-75"> 1988 - 2003<hr></span></p>
+                                                <p class="text-uppercase fw-bold">Chicago Bulls Tenure:<span class="text-white-75"> 1993 - 1998<hr></span></p>
+                                                <p class="text-uppercase fw-bold">NBA Championships:<span class="text-white-75"> (1996, 1997, 1998)</span></p>
+                                            </div>
+                                            <div class="col p-2 d-flex justify-content-center align-items-center" style="align-items: flex-start">
+                                                <figure class="text-center">
+                                                    <blockquote class="blockquote">
+                                                        <p class="text-white-50 pb-1">Success is not the result of spontaneous combustion. You must set yourself on fire.</p>
+                                                    </blockquote>
+                                                    <figcaption class="blockquote-footer">
+                                                        <cite title="Source Title" class="text-white">Steve Kerr</cite>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="swiper-slide">
+                                <div class="row players d-flex">
+                                    <div class="col-6 d-flex justify-content-center">
+                                        <img src="images/rodman-swiper.jpg" class="swiper-slide-images" alt="Dennis Rodman">
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-center info">
+                                        <div class="row gap-1">
+                                            <div class="col-6 p-4 pe-0 border-cust">
+                                                <h2 class="text-uppercase fw-bold pb-4" style="color: #e60000;">Dennis Rodman<hr></h2>
+                                                <p class="text-uppercase text-white-75">Position: PF (Power Forward)<hr></p>
+                                                <p class="text-uppercase fw-bold">Height:<span class="text-white-75"> 6'7"<hr></span></p>
+                                                <p class="text-uppercase fw-bold">Weight:<span class="text-white-75"> 220 lbs<hr></span></p>
+                                                <p class="text-uppercase fw-bold">College:<span class="text-white-75"> Southeastern Oklahoma State University<hr></span></p>
+                                                <p class="text-uppercase fw-bold">NBA Career:<span class="text-white-75"> 1986 - 2000<hr></span></p>
+                                                <p class="text-uppercase fw-bold">Chicago Bulls Tenure:<span class="text-white-75"> 1995 - 1998<hr></span></p>
+                                                <p class="text-uppercase fw-bold">NBA Championships:<span class="text-white-75"> (1996, 1997, 1998)</span></p>
+                                            </div>
+                                            <div class="col p-2 d-flex justify-content-center align-items-center" style="align-items: flex-start">
+                                                <figure class="text-center">
+                                                    <blockquote class="blockquote">
+                                                        <p class="text-white-50 pb-1">I don't care what people think. People are stupid.</p>
+                                                    </blockquote>
+                                                    <figcaption class="blockquote-footer">
+                                                        <cite title="Source Title" class="text-white">Dennis Rodman</cite>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="swiper-slide">
+                                <div class="row players d-flex">
+                                    <div class="col-6 d-flex justify-content-center">
+                                        <img src="images/toni-sw.avif" class="swiper-slide-images" alt="Toni Kukoč">
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-center info">
+                                        <div class="row gap-1">
+                                            <div class="col-6 p-4 pe-0 border-cust">
+                                                <h2 class="text-uppercase fw-bold pb-4" style="color: #e60000;">Toni Kukoč<hr></h2>
+                                                <p class="text-uppercase text-white-75">Position: SF (Small Forward)<hr></p>
+                                                <p class="text-uppercase fw-bold">Height:<span class="text-white-75"> 6'10"<hr></span></p>
+                                                <p class="text-uppercase fw-bold">Weight:<span class="text-white-75"> 192 lbs<hr></span></p>
+                                                <p class="text-uppercase fw-bold">Country:<span class="text-white-75"> Croatia<hr></span></p>
+                                                <p class="text-uppercase fw-bold">NBA Career:<span class="text-white-75"> 1993 - 2006<hr></span></p>
+                                                <p class="text-uppercase fw-bold">Chicago Bulls Tenure:<span class="text-white-75"> 1993 - 2000<hr></span></p>
+                                                <p class="text-uppercase fw-bold">NBA Championships:<span class="text-white-75"> (1996, 1997, 1998)</span></p>
+                                            </div>
+                                            <div class="col p-2 d-flex justify-content-center align-items-center" style="align-items: flex-start">
+                                                <figure class="text-center">
+                                                    <blockquote class="blockquote">
+                                                        <p class="text-white-50 pb-1">I always try to be calm and not allow too many things to affect me. I think my experience has helped me with that.</p>
+                                                    </blockquote>
+                                                    <figcaption class="blockquote-footer">
+                                                        <cite title="Source Title" class="text-white">Toni Kukoč</cite>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="row players d-flex">
+                                    <div class="col-6 d-flex justify-content-center">
+                                        <img src="images/ron-sw.jpg" class="swiper-slide-images" alt="Ron Harper">
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-center info">
+                                        <div class="row gap-1">
+                                            <div class="col-6 p-4 pe-0 border-cust">
+                                                <h2 class="text-uppercase fw-bold pb-4" style="color: #e60000;">Ron Harper<hr></h2>
+                                                <p class="text-uppercase text-white-75">Position: SG (Shooting Guard)<hr></p>
+                                                <p class="text-uppercase fw-bold">Height:<span class="text-white-75"> 6'6"<hr></span></p>
+                                                <p class="text-uppercase fw-bold">Weight:<span class="text-white-75"> 185 lbs<hr></span></p>
+                                                <p class="text-uppercase fw-bold">College:<span class="text-white-75"> Miami University (Ohio)<hr></span></p>
+                                                <p class="text-uppercase fw-bold">NBA Career:<span class="text-white-75"> 1986 - 2001<hr></span></p>
+                                                <p class="text-uppercase fw-bold">Chicago Bulls Tenure:<span class="text-white-75"> 1994 - 1999<hr></span></p>
+                                                <p class="text-uppercase fw-bold">NBA Championships:<span class="text-white-75"> (1996, 1997, 1998)</span></p>
+                                            </div>
+                                            <div class="col p-2 d-flex justify-content-center align-items-center" style="align-items: flex-start">
+                                                <figure class="text-center">
+                                                    <blockquote class="blockquote">
+                                                        <p class="text-white-50 pb-1">I was a scorer, but I also got to play defense. I also got to run the team. I just did a little bit of everything.</p>
+                                                    </blockquote>
+                                                    <figcaption class="blockquote-footer">
+                                                        <cite title="Source Title" class="text-white">Ron Harper</cite>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+
+                    </div>
+                </div>
+                <div class="row pt-5">
+                    <div class="col-12 heading mb-5">
+                        <h1 class="ps-7 text-uppercase fw-bold display-5" style="margin: 0;">Championships</h1>
+                    </div>
+                    <style>
+                        .services-content {
+                            display: grid;
+                            grid-template-columns: repeat(3, minmax(220px, 1fr)); /* Display 3 columns, adjust as needed */
+                            justify-content: space-evenly;
+                            margin-top: 40px;
+                            gap: 45px; 
+                        }
+
+
+        .service-mob,
+        .service {
+            position: relative;
+            min-height: 500px;
+            height: 100%;
+            border-radius: 10px;
+            background-size: cover;
+            transition: ease .2s;
+            z-index: 9;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            /*padding: 40px 30px;*/
+        }
+        .service-inner-1 {
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+        }
+        .service-inner-2 {
+            padding: 0 30px 40px 30px;
+            transition: background-color ease-in .2s;
+        }
+        .service-inner-content {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+        }
+        .service:hover {
+            border: 1px solid #e60000;
+            transform: translateY(-50px);
+        }
+        .service:hover .service-inner-2 {
+            background: #000000;
+        }
+        .service:hover .service-img {
+            filter: grayscale(0%);
+        }
+        .service-number {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-37%);
+            z-index: 10;
+            -webkit-text-stroke: 1px #e60000;
+            color: transparent;
+            font-size: 75px;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        .service-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            z-index: -1;
+            position: absolute;
+            transition: ease-in .2s;
+        }
+        .service-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .service-text {
+            font-family: 'Noto Serif', Serif;
+            line-height: 1.3;
+            min-height: 110px;
+        }
+        .service:hover .service-number {
+            color: #e60000;
+            -webkit-text-stroke: 1px #e60000;
+        }
+        .service:hover .service-more {
+            visibility: visible;
+        }
+
+        .plus-sign {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 30px;
+            max-height: 30px;
+            height: 100%;
+            width: 100%;
+        }
+        .service-more {
+            visibility: hidden;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .service-more .more {
+            text-transform: uppercase;
+            color: #e60000;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+        }
+                    </style>
+                    <div class="services-content mob-lg-hide">
+                        <div class="service"><!--1991-->
+                            <span class="service-number">1991</span>
+                            <div class="service-inner-content">
+                                <img class="service-img" src="images/1991.jpg" alt="x">
+                                <div class="overlayer"></div>
+                                <div class="service-inner-1">
+                                    <div class="service-inner-2">
+                                        <div class="service-information pt-3">
+                                            <h5 class="service-title">Chicago Bulls' Historic Triumph: The Beginning of a Dynasty</h5>
+                                            <p class="service-text">
+                                                In 1991, the Chicago Bulls, led by Michael Jordan and Scottie Pippen under coach Phil Jackson, won their first NBA championship. Jordan's outstanding performance, earning him Finals MVP, marked the beginning of the Bulls' dynasty in the 1990s and solidified their place in basketball history.                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="service"><!--1992-->
+                            <span class="service-number">1992</span>
+                            <div class="service-inner-content">
+                                <img class="service-img" src="images/1992-2.jpg" alt="x">
+                                <div class="overlayer"></div>
+                                <div class="service-inner-1">
+                                    <div class="service-inner-2">
+                                        <div class="service-information">
+                                            <h5 class="service-title pt-3">Back-to-Back Glory: Chicago Bulls Triumph in 1992</h5>
+                                            <p class="service-text">
+                                                In 1992, the Chicago Bulls, led by Michael Jordan and Scottie Pippen under coach Phil Jackson, clinched their second consecutive NBA championship. Their dominant playoff run highlighted their exceptional teamwork and Jordan's unmatched skills, earning him another Finals MVP award. The 1992 victory reinforced the Bulls' status as a powerhouse in basketball and set the stage for their continued success in the years ahead.                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="service"><!--1993-->
+                            <span class="service-number">1993</span>
+                            <div class="service-inner-content">
+                                <img class="service-img" src="images/1993.jpg" alt="x">
+                                <div class="overlayer"></div>
+                                <div class="service-inner-1">
+                                    <div class="service-inner-2">
+                                        <div class="service-information">
+                                            <h5 class="service-title pt-3">Three-Peat Achievement: Chicago Bulls' Triumph in 1993</h5>
+                                            <p class="service-text">
+                                                In 1993, the Chicago Bulls, led by Michael Jordan and Scottie Pippen under coach Phil Jackson, secured their third consecutive NBA championship. Their dominant playoff performance highlighted their exceptional teamwork and Jordan's unparalleled skill, earning him another Finals MVP accolade. The 1993 victory cemented the Bulls' legacy as one of the greatest teams in basketball history, showcasing their ability to consistently rise to the occasion and achieve greatness on the court.                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="service"><!--1996-->
+                            <span class="service-number">1996</span>
+                            <div class="service-inner-content">
+                                <img class="service-img" src="images/1996.jpg" alt="x" style="transform: scale(1.3);">
+                                <div class="overlayer"></div>
+                                <div class="service-inner-1">
+                                    <div class="service-inner-2">
+                                        <div class="service-information">
+                                            <h5 class="service-title pt-3">1996: Bulls' Return to Dominance</h5>
+                                            <p class="service-text">
+                                                In 1996, the Chicago Bulls, led by Michael Jordan and Scottie Pippen under coach Phil Jackson, captured their fourth NBA championship. Their cohesive teamwork and Jordan's standout performances earned him another Finals MVP award, cementing the Bulls' legacy as an enduring powerhouse in basketball history.                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service"><!--1997-->
+                            <span class="service-number">1997</span>
+                            <div class="service-inner-content">
+                                <img class="service-img" src="images/1997.jpg" alt="x" style="transform: scale(1.3);">
+                                <div class="overlayer"></div>
+                                <div class="service-inner-1">
+                                    <div class="service-inner-2">
+                                        <div class="service-information">
+                                            <h5 class="service-title pt-3">1997: Bulls' Fifth NBA Triumph</h5>
+                                            <p class="service-text">
+                                                In 1997, the Chicago Bulls, coached by Phil Jackson and led by Michael Jordan and Scottie Pippen, secured their fifth NBA championship. Jordan's exceptional leadership and performance earned him another Finals MVP award, solidifying the Bulls' legacy as one of the greatest teams in basketball history.                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service"><!--1998-->
+                            <span class="service-number">1998</span>
+                            <div class="service-inner-content">
+                                <img class="service-img" src="images/1998.jpg" alt="x" style="transform: scale(1.3);">
+                                <div class="overlayer"></div>
+                                <div class="service-inner-1">
+                                    <div class="service-inner-2">
+                                        <a href="#" class="service-more">
+                                            <span class="more new">JAUNUMS</span>
+                                        </a>
+                                        <div class="service-information">
+                                            <h5 class="service-title pt-3">1998: Bulls' Sixth NBA Triumph</h5>
+                                            <p class="service-text">
+                                                In 1998, the Chicago Bulls, coached by Phil Jackson and led by Michael Jordan and Scottie Pippen, clinched their sixth NBA championship. Jordan's outstanding leadership and performance, earning him his sixth Finals MVP award, underscored the Bulls' unparalleled dominance and secured their place as legends in basketball history.                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row pt-5">
+                    <div class="col-12 heading mb-5">
+                        <h1 class="ps-7 text-uppercase fw-bold display-5" style="margin: 0;">Gallery</h1>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script>
+        function redirectToPage() {
+            window.location.href = "https://www.nba.com/bulls";
+        }
+
+        var swiper = new Swiper('.swiper', {
+        // Optional parameters
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+            rotate: 130,
+            stretch: 0,
+            depth: 120,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+        },
+    });
+    </script>
 </body>
 </html>
